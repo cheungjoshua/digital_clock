@@ -15,9 +15,10 @@ class Clock {
 
     update(){
         const time = this.getTime();
+        const formattedHour = time.hour.toString().padStart(2,"0");
         const formattedMin = time.minute.toString().padStart(2,'0');
         const formattedSec = time.second.toString().padStart(2,"0");
-        const clockTime = `${time.hour}:${formattedMin}:${formattedSec}`;
+        const clockTime = `${formattedHour}:${formattedMin}:${formattedSec}`;
         const amPm = time.isAm ? "AM" : "PM";
         
         this.element.querySelector(".clockTime").textContent = clockTime;
